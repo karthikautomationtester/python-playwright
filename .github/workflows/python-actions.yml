@@ -26,7 +26,7 @@ jobs:
       run: playwright install
 
     - name: Run tests
-      run: pytest
+      run: pytest --html=reports/index.html
       
     - name: Upload Test Reports
       if: always()
@@ -34,3 +34,9 @@ jobs:
       with:
         name: test-results
         path: reports
+    
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: reports
