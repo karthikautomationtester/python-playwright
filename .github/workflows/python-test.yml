@@ -23,11 +23,11 @@ jobs:
 
     steps:
       - name: Thius is a test job
-      run: echo 'Hello World, Test'
+        run: echo 'Hello World, Test'
 
   deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Thius is a deploy job
-      run: echo 'Hello World, deploy'
+        run: echo 'Hello World, deploy'
