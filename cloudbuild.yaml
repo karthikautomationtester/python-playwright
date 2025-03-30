@@ -3,6 +3,7 @@ steps:
     id: 'Install and Run Tests'
     entrypoint: 'sh'
     args:
+      - '-c'
       - |
         pip install -r requirements.txt
         python -m playwright install --with-deps chromium
