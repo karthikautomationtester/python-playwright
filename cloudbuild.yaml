@@ -8,6 +8,11 @@ steps:
         pip install -r requirements.txt
         python -m playwright install --with-deps chromium
         pytest --html=reports/index.html
+artifacts:
+  objects:
+    location: gs://karthik-python-bucket/pw-python-reports
+    paths: 
+      - 'reports/**'
 options:
   machineType: 'E2_HIGHCPU_8'
   logging: CLOUD_LOGGING_ONLY
